@@ -54,9 +54,9 @@ class CounterfactualRegretMinimization(SequenceFormPolytopeRegretMinimizer):
         numerator = self._floored_counterfactual_regrets
         denominator = self.mask.T @ (self.mask @ numerator)
         normalized_denominator = denominator.copy()
-        normalized_denominator[normalized_denominator == 0] = 1
+        normalized_denominator[cp.isclose(normalized_denominator, 0)] = 1
         self.behavioral_strategy = cp.where(
-            denominator == 0,
+            cp.isclose(denominator, 0),
             self.behavioral_uniform_strategy,
             numerator / normalized_denominator,
         )
