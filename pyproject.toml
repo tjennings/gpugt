@@ -1,0 +1,86 @@
+[project]
+name = "gpugt"
+version = "0.0.0.dev0"
+description = "An open-source Python implementation of GPU-accelerated counterfactual regret minimization"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11,<3.14"
+authors = [
+    { name = "Universal, Open, Free, and Transparent Computer Poker Research Group", email = "juhok@andrew.cmu.edu" },
+]
+keywords = [
+    "artificial-intelligence",
+    "deep-learning",
+    "game",
+    "game-development",
+    "game-theory",
+    "holdem-poker",
+    "imperfect-information-game",
+    "libratus",
+    "pluribus",
+    "poker",
+    "poker-engine",
+    "poker-evaluator",
+    "poker-game",
+    "poker-hands",
+    "poker-library",
+    "poker-strategies",
+    "python",
+    "reinforcement-learning",
+    "texas-holdem",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Topic :: Education",
+    "Topic :: Games/Entertainment",
+    "Topic :: Games/Entertainment :: Board Games",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "cupy-cuda13x>=13.6.0,<14",
+    "nvidia-cublas",
+    "nvidia-cuda-nvrtc",
+    "nvidia-cuda-runtime",
+    "nvidia-cusolver",
+    "nvidia-cusparse",
+    "noregret~=0.0.0.dev2",
+    "numpy>=2.0,<3",
+    "scipy>=1.14.0,<2",
+]
+
+[project.urls]
+Documentation = "https://gpugt.readthedocs.io/en/latest/"
+Source = "https://github.com/uoftcprg/gpugt"
+Tracker = "https://github.com/uoftcprg/gpugt/issues"
+
+[dependency-groups]
+dev = [
+    "build~=1.3.0",
+    "coverage~=7.12.0",
+    "flake8~=7.3.0",
+    "interrogate~=1.7.0",
+    "matplotlib~=3.10.6",
+    "open-spiel~=1.6.9",
+    "pandas~=2.3.2",
+    "pokerkit~=0.6.5",
+    "seaborn~=0.13.2",
+    "Sphinx~=8.2.3",
+    "sphinx-rtd-theme~=3.0.2",
+    "tqdm~=4.67.1",
+    "twine~=6.2.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
